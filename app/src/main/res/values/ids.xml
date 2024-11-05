@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="editTextNome" type="id" />
+    <item name="buttonInsert" type="id" />
+    <item name="buttonGetAll" type="id" />
+    <item name="textViewResult" type="id" />
+    <item name="forcaTextView" type="id" />
+</resources>

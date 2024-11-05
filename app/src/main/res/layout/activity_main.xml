@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Seção de Seleção de Classe -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selecione a Classe:"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:textColor="#6A1B9A"/>
+
+        <Spinner
+            android:id="@+id/classeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinner_background"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:prompt="@string/classe_prompt"/>
+
+        <!-- Seção de Seleção de Raça -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selecione a Raça:"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:textColor="#6A1B9A"/>
+
+        <Spinner
+            android:id="@+id/racaSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinner_background"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:prompt="@string/raca_prompt"/>
+
+        <!-- Seção de Seleção de Nível -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selecione o Nível:"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:textColor="#6A1B9A"/>
+
+        <Spinner
+            android:id="@+id/nivelSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinner_background"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:prompt="@string/nivel_prompt"/>
+
+        <!-- Pontos Restantes -->
+        <TextView
+            android:id="@+id/pontosRestantesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pontos restantes: 27"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:textColor="#333333"/>
+
+        <!-- Seção de Distribuição de Habilidades -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Distribua os Pontos nas Habilidades:"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:textColor="#6A1B9A"/>
+
+        <!-- Habilidades com SeekBars -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Força"/>
+        <SeekBar
+            android:id="@+id/forcaSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="7"
+            android:background="@drawable/seekbar_background"
+            android:padding="8dp"/>
+        <TextView
+            android:id="@+id/forcaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Força: 8"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Destreza"/>
+        <SeekBar
+            android:id="@+id/destrezaSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="7"
+            android:background="@drawable/seekbar_background"
+            android:padding="8dp"/>
+        <TextView
+            android:id="@+id/destrezaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Destreza: 8"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Constituição"/>
+        <SeekBar
+            android:id="@+id/constituicaoSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="7"
+            android:background="@drawable/seekbar_background"
+            android:padding="8dp"/>
+        <TextView
+            android:id="@+id/constituicaoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Constituição: 8"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inteligência"/>
+        <SeekBar
+            android:id="@+id/inteligenciaSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="7"
+            android:background="@drawable/seekbar_background"
+            android:padding="8dp"/>
+        <TextView
+            android:id="@+id/inteligenciaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inteligência: 8"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sabedoria"/>
+        <SeekBar
+            android:id="@+id/sabedoriaSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="7"
+            android:background="@drawable/seekbar_background"
+            android:padding="8dp"/>
+        <TextView
+            android:id="@+id/sabedoriaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sabedoria: 8"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carisma"/>
+        <SeekBar
+            android:id="@+id/carismaSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="7"
+            android:background="@drawable/seekbar_background"
+            android:padding="8dp"/>
+        <TextView
+            android:id="@+id/carismaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carisma: 8"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Campo de Nome do Personagem -->
+        <EditText
+            android:id="@+id/editTextNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome do Personagem"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Botão para Inserir -->
+        <Button
+            android:id="@+id/buttonInsert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inserir"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#6A1B9A"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"/>
+
+        <!-- Botão para Obter Todos -->
+        <Button
+            android:id="@+id/buttonGetAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Obter Todos"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#6A1B9A"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"/>
+
+        <!-- Exibir Resultados -->
+        <TextView
+            android:id="@+id/textViewResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Resultados aparecerão aqui..."
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:gravity="center"/>
+    </LinearLayout>
+</ScrollView>

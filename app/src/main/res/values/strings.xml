@@ -1,0 +1,7 @@
+
+<resources>
+<string name="classe_prompt">Escolha uma classe</string>
+<string name="raca_prompt">Escolha uma raça</string>
+<string name="nivel_prompt">Escolha um nível</string>
+<string name="app_name">Persistência</string>
+</resources>
