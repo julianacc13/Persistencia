@@ -65,6 +65,8 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation("com.google.code.gson:gson:2.8.9")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4") // ou versão mais recente
+
 
     // Dependências do Room
     implementation("androidx.room:room-runtime:2.6.1")

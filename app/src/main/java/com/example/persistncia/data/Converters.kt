@@ -1,9 +1,9 @@
 package com.example.persistncia.data
 
 import androidx.room.TypeConverter
-import com.example.persistncia.strategy.Habilidade.Habilidade
-import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflect.TypeToken
+import com.example.persistencia.strategy.Habilidade.Habilidade
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.up.ddm.strategy.ClasseStrategy
 import com.up.ddm.strategy.Guerreiro
 import com.up.ddm.strategy.Bruxo
@@ -21,6 +21,7 @@ import com.up.ddm.strategy.raca.RacaStrategy
 class Converters {
 
     private val gson = Gson()
+
     @TypeConverter
     fun fromClasseStrategy(classe: ClasseStrategy?): String? {
         return classe?.javaClass?.simpleName
@@ -37,7 +38,6 @@ class Converters {
         }
     }
 
-    // RacaStrategy Converters
     @TypeConverter
     fun fromRacaStrategy(raca: RacaStrategy?): String? {
         return raca?.javaClass?.simpleName
@@ -67,15 +67,16 @@ class Converters {
             else -> null
         }
     }
+
     @TypeConverter
     fun fromHabilidadeList(habilidades: List<Habilidade>?): String? {
-        return gson.toJson(habilidades)
+        return habilidades?.let { Gson().toJson(it) }
     }
 
     @TypeConverter
     fun toHabilidadeList(data: String?): List<Habilidade>? {
         val listType = object : TypeToken<List<Habilidade>>() {}.type
-        return gson.fromJson(data, listType)
+        return data?.let { Gson().fromJson(it, listType) }
     }
-}
 
+}

@@ -7,7 +7,6 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.persistencia.data.dao.PersonagemDAO
 import com.example.persistncia.data.Converters
-import com.example.persistncia.data.entity.PersonagemEntity
 
 @Database(entities = [PersonagemEntity::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)

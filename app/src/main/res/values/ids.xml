@@ -5,4 +5,11 @@
     <item name="buttonGetAll" type="id" />
     <item name="textViewResult" type="id" />
     <item name="forcaTextView" type="id" />
+    <item name="buttonNivel" type="id" />
+    <item name="buttonClasse" type="id" />
+    <item name="selectedNivelTextView" type="id" />
+    <item name="selectedRacaTextView" type="id" />
+    <item name="selectedClasseTextView" type="id" />
+    <item name="buttonUpdate" type="id" />
+    <item name="pontos_restantes_text_view" type="id" />
 </resources>

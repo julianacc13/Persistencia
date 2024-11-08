@@ -1,6 +1,5 @@
-import com.example.persistncia.data.entity.PersonagemEntity
-import com.example.persistncia.strategy.personagem.PersonagemStrategy
-import com.example.persistncia.strategy.Habilidade.Habilidade
+import com.example.persistencia.data.entity.PersonagemEntity
+import com.example.persistencia.strategy.Habilidade.Habilidade
 
 fun PersonagemEntity.toDomainModel(): PersonagemStrategy {
     return PersonagemStrategy(
@@ -9,10 +8,11 @@ fun PersonagemEntity.toDomainModel(): PersonagemStrategy {
         classe = classe,
         raca = raca,
         nivel = nivel,
-        habilidades = habilidades
+        habilidades = habilidades.map { Habilidade(it.nome, it.valor) }
     )
 }
 
+// Converte PersonagemStrategy para PersonagemEntity
 fun PersonagemStrategy.toEntity(): PersonagemEntity {
     return PersonagemEntity(
         id = id,
@@ -20,6 +20,7 @@ fun PersonagemStrategy.toEntity(): PersonagemEntity {
         classe = classe,
         raca = raca,
         nivel = nivel,
-        habilidades = habilidades
+        habilidades = habilidades.map { Habilidade(it.nome, it.valor) }
     )
 }
+

@@ -1,237 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    tools:context=".ui.activities.MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/editText_nome"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:hint="Nome do personagem"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
 
-        <!-- Seção de Seleção de Classe -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Selecione a Classe:"
-            android:textSize="18sp"
-            android:layout_marginTop="16dp"
-            android:textColor="#6A1B9A"/>
+    <Button
+        android:id="@+id/button_insert_character"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar Personagem"
+        app:layout_constraintTop_toBottomOf="@id/editText_nome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-        <Spinner
-            android:id="@+id/classeSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/spinner_background"
-            android:padding="8dp"
-            android:layout_marginTop="8dp"
-            android:prompt="@string/classe_prompt"/>
+    <Button
+        android:id="@+id/button_update_character"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Atualizar Personagem"
+        app:layout_constraintTop_toBottomOf="@id/button_insert_character"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-        <!-- Seção de Seleção de Raça -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Selecione a Raça:"
-            android:textSize="18sp"
-            android:layout_marginTop="16dp"
-            android:textColor="#6A1B9A"/>
+    <Button
+        android:id="@+id/button_delete_character"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Excluir Personagem"
+        app:layout_constraintTop_toBottomOf="@id/button_update_character"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-        <Spinner
-            android:id="@+id/racaSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/spinner_background"
-            android:padding="8dp"
-            android:layout_marginTop="8dp"
-            android:prompt="@string/raca_prompt"/>
+    <Button
+        android:id="@+id/button_get_all_characters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Obter Todos os Personagens"
+        app:layout_constraintTop_toBottomOf="@id/button_delete_character"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-        <!-- Seção de Seleção de Nível -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Selecione o Nível:"
-            android:textSize="18sp"
-            android:layout_marginTop="16dp"
-            android:textColor="#6A1B9A"/>
+    <TextView
+        android:id="@+id/textView_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Resultados"
+        app:layout_constraintTop_toBottomOf="@id/button_get_all_characters"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
 
-        <Spinner
-            android:id="@+id/nivelSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/spinner_background"
-            android:padding="8dp"
-            android:layout_marginTop="8dp"
-            android:prompt="@string/nivel_prompt"/>
+    <TextView
+        android:id="@+id/selected_classe_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Classe: "
+        app:layout_constraintTop_toBottomOf="@id/textView_result"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-        <!-- Pontos Restantes -->
-        <TextView
-            android:id="@+id/pontosRestantesTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pontos restantes: 27"
-            android:textSize="18sp"
-            android:layout_marginTop="16dp"
-            android:textColor="#333333"/>
+    <Button
+        android:id="@+id/button_select_classe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecionar Classe"
+        app:layout_constraintTop_toBottomOf="@id/selected_classe_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
 
-        <!-- Seção de Distribuição de Habilidades -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Distribua os Pontos nas Habilidades:"
-            android:textSize="18sp"
-            android:layout_marginTop="16dp"
-            android:textColor="#6A1B9A"/>
+    <TextView
+        android:id="@+id/selected_raca_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Raça: "
+        app:layout_constraintTop_toBottomOf="@id/button_select_classe"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-        <!-- Habilidades com SeekBars -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Força"/>
-        <SeekBar
-            android:id="@+id/forcaSeekBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="7"
-            android:background="@drawable/seekbar_background"
-            android:padding="8dp"/>
-        <TextView
-            android:id="@+id/forcaTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Força: 8"
-            android:layout_marginBottom="16dp"/>
+    <Button
+        android:id="@+id/button_select_raca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecionar Raça"
+        app:layout_constraintTop_toBottomOf="@id/selected_raca_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Destreza"/>
-        <SeekBar
-            android:id="@+id/destrezaSeekBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="7"
-            android:background="@drawable/seekbar_background"
-            android:padding="8dp"/>
-        <TextView
-            android:id="@+id/destrezaTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Destreza: 8"
-            android:layout_marginBottom="16dp"/>
+    <TextView
+        android:id="@+id/selected_nivel_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nível: "
+        app:layout_constraintTop_toBottomOf="@id/button_select_raca"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Constituição"/>
-        <SeekBar
-            android:id="@+id/constituicaoSeekBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="7"
-            android:background="@drawable/seekbar_background"
-            android:padding="8dp"/>
-        <TextView
-            android:id="@+id/constituicaoTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Constituição: 8"
-            android:layout_marginBottom="16dp"/>
+    <Button
+        android:id="@+id/button_select_nivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecionar Nível"
+        app:layout_constraintTop_toBottomOf="@id/selected_nivel_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Inteligência"/>
-        <SeekBar
-            android:id="@+id/inteligenciaSeekBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="7"
-            android:background="@drawable/seekbar_background"
-            android:padding="8dp"/>
-        <TextView
-            android:id="@+id/inteligenciaTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Inteligência: 8"
-            android:layout_marginBottom="16dp"/>
+    <TextView
+        android:id="@+id/forca_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Força: "
+        app:layout_constraintTop_toBottomOf="@id/button_select_nivel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sabedoria"/>
-        <SeekBar
-            android:id="@+id/sabedoriaSeekBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="7"
-            android:background="@drawable/seekbar_background"
-            android:padding="8dp"/>
-        <TextView
-            android:id="@+id/sabedoriaTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sabedoria: 8"
-            android:layout_marginBottom="16dp"/>
+    <SeekBar
+        android:id="@+id/forca_seek_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="15"
+        app:layout_constraintTop_toBottomOf="@id/forca_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Carisma"/>
-        <SeekBar
-            android:id="@+id/carismaSeekBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="7"
-            android:background="@drawable/seekbar_background"
-            android:padding="8dp"/>
-        <TextView
-            android:id="@+id/carismaTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Carisma: 8"
-            android:layout_marginBottom="16dp"/>
+    <TextView
+        android:id="@+id/destreza_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destreza: "
+        app:layout_constraintTop_toBottomOf="@id/forca_seek_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-        <!-- Campo de Nome do Personagem -->
-        <EditText
-            android:id="@+id/editTextNome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nome do Personagem"
-            android:layout_marginTop="16dp"/>
+    <SeekBar
+        android:id="@+id/destreza_seek_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="15"
+        app:layout_constraintTop_toBottomOf="@id/destreza_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
 
-        <!-- Botão para Inserir -->
-        <Button
-            android:id="@+id/buttonInsert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Inserir"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#6A1B9A"
-            android:textColor="#FFFFFF"
-            android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/constituicao_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Constituição: "
+        app:layout_constraintTop_toBottomOf="@id/destreza_seek_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-        <!-- Botão para Obter Todos -->
-        <Button
-            android:id="@+id/buttonGetAll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Obter Todos"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#6A1B9A"
-            android:textColor="#FFFFFF"
-            android:layout_gravity="center"/>
+    <SeekBar
+        android:id="@+id/constituicao_seek_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="15"
+        app:layout_constraintTop_toBottomOf="@id/constituicao_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
 
-        <!-- Exibir Resultados -->
-        <TextView
-            android:id="@+id/textViewResult"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Resultados aparecerão aqui..."
-            android:textSize="16sp"
-            android:textColor="#333333"
-            android:gravity="center"/>
-    </LinearLayout>
-</ScrollView>
+    <TextView
+        android:id="@+id/inteligencia_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inteligência: "
+        app:layout_constraintTop_toBottomOf="@id/constituicao_seek_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <SeekBar
+        android:id="@+id/inteligencia_seek_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="15"
+        app:layout_constraintTop_toBottomOf="@id/inteligencia_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/sabedoria_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sabedoria: "
+        app:layout_constraintTop_toBottomOf="@id/inteligencia_seek_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <SeekBar
+        android:id="@+id/sabedoria_seek_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="15"
+        app:layout_constraintTop_toBottomOf="@id/sabedoria_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/carisma_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Carisma: "
+        app:layout_constraintTop_toBottomOf="@id/sabedoria_seek_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <SeekBar
+        android:id="@+id/carisma_seek_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="15"
+        app:layout_constraintTop_toBottomOf="@id/carisma_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
